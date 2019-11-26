@@ -10,7 +10,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: bs-config-client
+    name: bsConfigClient
 
 eureka:
   client:
