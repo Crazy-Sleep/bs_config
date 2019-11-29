@@ -1,0 +1,24 @@
+server:
+  port: 6001
+
+spring:
+  application:
+    name: zuul-service  #网关服务的名称
+
+zuul:
+  add-host-header: true
+  forceOriginalQueryStringEncoding: true
+  prefix: /api  #访问前缀
+  host:
+    socket-timeout-millis: 100000
+    connect-timeout-millis: 100000
+  routes:
+    user-route:   #名称自定义，必须为xxx-route   访问路径 http://localhost:网关端口/访问前缀/访问路径/user/getOrderByUserId
+      path: /user-service/** #访问路径
+      sensitive-headers: "*"
+      serviceId: user-service   #user服务的名称
+      custom-sensitive-headers: true
+#
+management:
+  security:
+    enabled: false
