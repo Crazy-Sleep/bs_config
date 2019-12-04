@@ -18,6 +18,11 @@ zuul:
       sensitive-headers: "*"
       serviceId: user-service   #user服务的名称
       custom-sensitive-headers: true
+    order-route:
+      path: /order-service/**
+      sensitive-headers: "*"
+      serviceId: order-service
+      custom-sensitive-headers: true  
 #
 management:
   security:
