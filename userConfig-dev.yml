@@ -10,6 +10,13 @@ spring:
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 
+# mybatis plus
+mybatis-plus:
+  type-aliases-package: com.bosssoft.user.dto
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
 #断路器配置
 circuitBreaker:
   # 请求总数下限
@@ -21,3 +28,4 @@ circuitBreaker:
 feign:
   hystrix:
     enabled: true
+    
